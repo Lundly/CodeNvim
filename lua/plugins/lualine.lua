@@ -18,7 +18,7 @@ return {
             'mode'
           },
           lualine_b = {
-            'branch', 'diff', 'diagnostics'
+            'branch', 'diff'
           },
           lualine_c = {
             {

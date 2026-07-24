@@ -21,8 +21,8 @@ key("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==",                   {
 key("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==",             { desc = "Move Up" })
 key("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi",                                   { desc = "Move Down" })
 key("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi",                                   { desc = "Move Up" })
-key("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv",       { desc = "Move Down" })
-key("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
+key("v", "<A-j>", "<cmd><C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv",       { desc = "Move Down" })
+key("v", "<A-k>", "<cmd><C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
 -- better indent
 key("x", "<", "<gv")
@@ -45,8 +45,8 @@ key("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window W
 key("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 key("n", "<S-l>", "<cmd>bnext<cr>",     { desc = "Next Buffer" })
 key("n", "<leader>bD", "<cmd>:bd<cr>",  { desc = "Delete Buffer and Window" })
-key( "n", "<PageUp>",   ":BufferLineMovePrev<CR>", { desc = "Buffer line move prev" } )
-key( "n", "<PageDown>", ":BufferLineMoveNext<CR>", { desc = "Buffer line move next" } )
+key( "n", "<PageUp>",   "<cmd>BufferLineMovePrev<CR>", { desc = "Buffer line move prev" } )
+key( "n", "<PageDown>", "<cmd>BufferLineMoveNext<CR>", { desc = "Buffer line move next" } )
 
 -- Clear search on escape
 key({ "i", "n", "s" }, "<esc>", function() vim.cmd("noh") return "<esc>" end, { expr = true, desc = "Escape and Clear hlsearch" })

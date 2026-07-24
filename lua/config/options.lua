@@ -100,19 +100,5 @@ opt.termguicolors =true
 -- 始终显示符号列（避免文字偏移）
 opt.signcolumn = "yes"
 
--- 虚拟文本
-vim.diagnostic.config({
-  virtual_text = {
-    prefix = "●",        -- 诊断前缀符号
-    spacing = 2,         -- 代码和诊断文本之间的空格数
-    source = true,       -- 是否显示来源
-    -- severity = { min = vim.diagnostic.severity.WARN }, -- 只显示 WARN 及以上
-  },
-  signs = true,          -- 在符号列显示图标
-  underline = true,      -- 在问题代码下划线
-  update_in_insert = false, -- 输入时不更新诊断
-  severity_sort = true,  -- 按严重程度排序
-})
-
 
 

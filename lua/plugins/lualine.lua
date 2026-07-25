@@ -34,6 +34,11 @@ return {
             "filename",
           },
           lualine_x = {
+             {
+              -- showcmd
+              function() return require("noice").api.status.command.get() end,
+              cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+            },
             'encoding',
             function()
               return "Indent " .. vim.bo.shiftwidth

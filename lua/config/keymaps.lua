@@ -45,8 +45,8 @@ key("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window W
 key("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 key("n", "<S-l>", "<cmd>bnext<cr>",     { desc = "Next Buffer" })
 key("n", "<leader>bD", "<cmd>:bd<cr>",  { desc = "Delete Buffer and Window" })
-key( "n", "<PageUp>",   "<cmd>BufferLineMovePrev<CR>", { desc = "Buffer line move prev" } )
-key( "n", "<PageDown>", "<cmd>BufferLineMoveNext<CR>", { desc = "Buffer line move next" } )
+key("n", "<PageUp>",   "<cmd>BufferLineMovePrev<CR>", { desc = "Buffer line move prev" } )
+key("n", "<PageDown>", "<cmd>BufferLineMoveNext<CR>", { desc = "Buffer line move next" } )
 
 -- Clear search on escape
 key({ "i", "n", "s" }, "<esc>", function() vim.cmd("noh") return "<esc>" end, { expr = true, desc = "Escape and Clear hlsearch" })

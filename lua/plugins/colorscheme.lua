@@ -14,10 +14,5 @@ return {
     end
   },
 
-  {
-    "EdenEast/nightfox.nvim",
-    event = "VeryLazy",
-  },
-
 }
 

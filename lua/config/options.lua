@@ -80,9 +80,12 @@ opt.fillchars = {
   diff = "╱",
   eob = " ",
 }
+opt.foldenable = true
 opt.foldlevel = 99
-opt.foldmethod = "indent"
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldtext = "" -- 空字符串表示禁用自定义折叠文本
+opt.foldcolumn = "auto"
 
 opt.timeoutlen = vim.g.vscode and 1000 or 300 -- Lower than default (1000) to quickly trigger which-key
 opt.updatetime = 200 -- Save swap file and trigger CursorHold

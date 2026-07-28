@@ -42,15 +42,18 @@ return {
         if not lang or not have(lang) then
           return
         end
+        -- highlight
         if opts.highlight.enable ~= false then
           pcall(vim.treesitter.start, ev.buf)
         end
+        -- indent
         if opts.indent.enable ~= false then
           vim.bo[ev.buf].indentexpr = 'v:lua.require("nvim-treesitter").indentexpr()'
         end
+        -- folds
         if opts.folds.enable ~= false then
           vim.wo.foldmethod = "expr"
-          vim.wo.foldexpr = 'v:lua.require("nvim-treesitter").foldexpr()'
+          vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
         end
       end,
     })

@@ -129,3 +129,47 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   command = "set formatoptions-=ro",
 })
 
+-- Auto detect indent width on file open
+vim.api.nvim_create_autocmd("BufReadPost", {
+  group = augroup("detect_indent"),
+  pattern = "*",
+  callback = function()
+    if vim.bo.buftype ~= "" then
+      return
+    end
+    local lines = vim.api.nvim_buf_get_lines(0, 0, math.min(200, vim.api.nvim_buf_line_count(0)), false)
+    local indent_count = {}
+
+    for _, line in ipairs(lines) do
+      if line ~= "" then
+        local leading = line:match("^( +)")
+        if leading then
+          local spaces = #leading
+          indent_count[spaces] = (indent_count[spaces] or 0) + 1
+        end
+      end
+    end
+    local gaps = {}
+    for a, _ in pairs(indent_count) do
+      for b, _ in pairs(indent_count) do
+        if b > a then
+          local gap = b - a
+          gaps[gap] = (gaps[gap] or 0) + 1
+        end
+      end
+    end
+    local detected = 0
+    local max_count = 0
+    for gap, count in pairs(gaps) do
+      if count > max_count then
+        max_count = count
+        detected = gap
+      end
+    end
+    if detected > 0 then
+      vim.bo.shiftwidth = detected
+      vim.bo.tabstop = detected
+    end
+  end,
+})
+

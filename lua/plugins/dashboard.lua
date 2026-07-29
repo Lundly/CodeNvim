@@ -42,7 +42,7 @@ return {
           {
             { text = "", action = ":lua Snacks.dashboard.pick('files')", key = "f" },
             { text = "", action = ":ene | startinsert", key = "n" },
-            { text = "", action = ":echo 'not implemented'", key = "s" },
+            { text = "", action = ":lua require('persistence').load({ last = true })", key = "s" },
             { text = "", action = ":qa", key = "q" },
           },
           { text = { "" } },

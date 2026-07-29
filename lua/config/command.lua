@@ -16,4 +16,5 @@ vim.api.nvim_create_user_command("SetIndent", function(opts)
 end, { nargs = "?" })
 
 vim.cmd(":command! Dm :delmarks! ")
+vim.cmd(":command! Dashboard :lua Snacks.dashboard()")
 

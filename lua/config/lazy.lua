@@ -36,7 +36,7 @@ require("lazy").setup({
     version = false,
   },
   -- colorscheme will be used when installing plugins
-  install = { colorscheme = { "everforest" } },
+  install = { colorscheme = { Core.configs.colorscheme, "habamax" } },
   -- automatically check for plugin updates
   checker = {
       enabled = true,

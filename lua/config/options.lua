@@ -2,7 +2,7 @@
 local opt = vim.opt
 
 -- color scheme
-vim.cmd.colorscheme "everforest"
+Core.configs.colorscheme = "everforest"
 
 -- mapleader
 vim.g.mapleader = " "
@@ -98,7 +98,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- terminal true color
-opt.termguicolors =true
+opt.termguicolors = true
 
 -- 始终显示符号列（避免文字偏移）
 opt.signcolumn = "yes"

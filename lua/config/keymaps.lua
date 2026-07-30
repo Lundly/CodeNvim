@@ -36,15 +36,15 @@ key("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 key("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
 -- Resize window using <ctrl> arrow keys
-key("n", "<C-Up>", "<cmd>resize +2<cr>",             { desc = "Increase Window Height" })
-key("n", "<C-Down>", "<cmd>resize -2<cr>",           { desc = "Decrease Window Height" })
-key("n", "<C-Left>", "<cmd>vertical resize -2<cr>",  { desc = "Decrease Window Width" })
-key("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
+key("n", "<C-Up>",    "<cmd>resize +2<cr>",             { desc = "Increase Window Height" })
+key("n", "<C-Down>",  "<cmd>resize -2<cr>",             { desc = "Decrease Window Height" })
+key("n", "<C-Left>",  "<cmd>vertical resize -2<cr>",    { desc = "Decrease Window Width" })
+key("n", "<C-Right>", "<cmd>vertical resize +2<cr>",    { desc = "Increase Window Width" })
 
 -- buffers
-key("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
-key("n", "<S-l>", "<cmd>bnext<cr>",     { desc = "Next Buffer" })
-key("n", "<leader>bD", "<cmd>:bd<cr>",  { desc = "Delete Buffer and Window" })
+key("n", "<S-h>",      "<cmd>bprevious<cr>",          { desc = "Prev Buffer" })
+key("n", "<S-l>",      "<cmd>bnext<cr>",              { desc = "Next Buffer" })
+key("n", "<leader>bD", "<cmd>:bd<cr>",                { desc = "Delete Buffer and Window" })
 key("n", "<PageUp>",   "<cmd>BufferLineMovePrev<CR>", { desc = "Buffer line move prev" } )
 key("n", "<PageDown>", "<cmd>BufferLineMoveNext<CR>", { desc = "Buffer line move next" } )
 

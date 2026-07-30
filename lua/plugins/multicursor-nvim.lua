@@ -2,37 +2,9 @@ return {
   {
     "jake-stewart/multicursor.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    -- opts = {
-    --   keys = {
-    --     { "x",          "S",              mc.splitCursors,                         desc = "Split visual selections by regex"  },
-    --     { "x",          "M",              mc.matchCursors,                         desc = "match new cursors within visual selections by regex"  },
-    --     { "n",          "<leader>a",      mc.alignCursors,                         desc = "Align cursor columns"  },
-    --     { "n",          "<M-leftmouse>",  mc.handleMouse,                          desc = "Handle mouse"  },
-    --     { "n",          "<M-leftdrag>",   mc.handleMouseDrag,                      desc = "Handle mouse drag"  },
-    --     { "n",          "<M-leftrelease>",mc.handleMouseRelease,                   desc = "Handle mouse release"  },
-    --     { { "n", "x" }, "ga",             mc.addCursorOperator,                    desc = "Add cursor when select at visual mode"  },
-    --     { { "n", "x" }, "<M-q>",          mc.toggleCursor,                         desc = "Disable and enable cursors"  },
-    --     { { "n", "x" }, "<leader>o",      mc.operator,                             desc = "Adds a cursor for every match found in a region"  },-- see `:h multicursor-operator` for detail
-    --     { { "n", "x" }, "<M-up>",         function () mc.lineAddCursor(-1)   end,  desc = "Add cursor up"  },
-    --     { { "n", "x" }, "<M-down>",       function () mc.lineAddCursor(1)    end,  desc = "Add cursor down"  },
-    --     { { "n", "x" }, "<M-C-up>",       function () mc.lineSkipCursor(-1)  end,  desc = "Skip cursor up"  },
-    --     { { "n", "x" }, "<M-C-down>",     function () mc.lineSkipCursor(1)   end,  desc = "Skip cursor down"  },
-    --     { { "n", "x" }, "<leader>mn",     function () mc.matchAddCursor(1)   end,  desc = "Add cursor match down"  },
-    --     { { "n", "x" }, "<leader>mN",     function () mc.matchAddCursor(-1)  end,  desc = "Add cursor match up"  },
-    --     { { "n", "x" }, "<leader>ms",     function () mc.matchSkipCursor(1)  end,  desc = "skip cursor match down"  },
-    --     { { "n", "x" }, "<leader>mS",     function () mc.matchSkipCursor(-1) end,  desc = "skip cursor match up"  }
-    --   }
-    -- },
     config = function ()
       local mc = require("multicursor-nvim")
       mc.setup()
-
-      -- keymaps
-      -- local set = vim.keymap.set
-      -- local keys = opts.keys
-      -- for _, key in ipairs(keys) do
-      --   set(key[1], key[2], key[3], { desc = keys.desc })
-      -- end
 
       local key = vim.keymap.set
       key( "x",          "<leader>ms",       function () mc.splitCursors() end,                    { desc = "Split visual selections by regex" } )

@@ -67,6 +67,14 @@ return {
         },
       },
 
+      statuscolumn = {
+        left = { "mark", "sign" }, -- priority of signs on the left (high to low)
+        right = { "fold", "git" }, -- priority of signs on the right (high to low)
+        folds = {
+          open = true, -- show open fold icons
+          git_hl = true, -- use Git Signs hl for fold icons
+        },
+      }
 
     },
 
@@ -151,7 +159,6 @@ return {
       { "]]",         function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
       { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
     },
-
 
   }
 }

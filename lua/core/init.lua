@@ -1,9 +1,10 @@
 _G.Core = require("core.util")
 
+---@class Core.startup
 local M = {}
 Core.neovim = M
 
-function M.setup()
+function M.startup()
   local group = vim.api.nvim_create_augroup("CodeNvim", { clear = true })
   vim.api.nvim_create_autocmd("User", {
     group = group,
@@ -52,7 +53,7 @@ function M.init()
     M.load_files.autocmd = true
   end
 
-  M.setup()
+  M.startup()
 end
 
 return M

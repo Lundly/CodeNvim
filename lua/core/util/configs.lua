@@ -1,5 +1,6 @@
----@class Core.configs
+---@class Core.util.configs
 ---@field colorscheme string
+-- -@field extra extratoggle
 local configs = {}
 
 configs.icons = {
@@ -77,6 +78,11 @@ configs.icons = {
     Dots         = "󰇘 ",
     DotsVertical = "󰇙 ",
   }
+}
+
+---@class extratoggle
+configs.extra = {
+  overwrite = true
 }
 
 return configs

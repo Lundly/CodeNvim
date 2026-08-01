@@ -1,2 +1,2 @@
 -- start core
-require("core").init()
+require("core")

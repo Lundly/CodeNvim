@@ -5,7 +5,7 @@ local overwrite = {}
 
 ---@class OverwriteConfig
 overwrite.config = {
-    snacks_statuscolumn = true
+    snacks_statuscolumn = false
 }
 
 ---@class OverwriteFn

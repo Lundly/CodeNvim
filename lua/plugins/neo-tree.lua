@@ -44,24 +44,23 @@ return {
         git_status = {
           symbols = {
             -- change type
-            added     = "",
-            deleted   = " ",
-            modified  = " ",
-            renamed   = "󰁕 ",
+            added     = Core.configs.icons.git.Added,
+            deleted   = Core.configs.icons.git.Deleted,
+            modified  = Core.configs.icons.git.Modified,
             -- Status type
-            untracked = " ",
-            ignored   = " ",
-            unstaged  = "U",
-            staged    = "󱓳 ",
-            conflict  = " ",
+            untracked = Core.configs.icons.git.Untracked,
+            ignored   = Core.configs.icons.git.Ignored,
+            unstaged  = Core.configs.icons.git.Unstaged,
+            staged    = Core.configs.icons.git.Staged,
+            conflict  = Core.configs.icons.git.Conflict,
           }
         },
         diagnostics = {
           symbols = {
-            error = " ",
-            warn  = " ",
-            hint  = "󰌵 ",
-            info  = " ",
+            error = Core.configs.icons.diagnostics.Error,
+            warn  = Core.configs.icons.diagnostics.Warn,
+            hint  = Core.configs.icons.diagnostics.Hint,
+            info  = Core.configs.icons.diagnostics.Info,
           },
           highlights = {
             error = "DiagnosticSignError",

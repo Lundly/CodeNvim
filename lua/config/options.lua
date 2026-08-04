@@ -17,6 +17,12 @@ opt.relativenumber = true
 
 -- set true to display invisible char
 opt.list = true
+vim.opt.listchars = {
+    lead  = " ",
+    trail = "󰧟",
+    tab   = "▸ ",
+    nbsp  = "␣",
+}
 
 -- 0: do not show status line;
 -- 1: show status line when mutiple windows exist;
@@ -103,5 +109,16 @@ opt.termguicolors = true
 -- 始终显示符号列（避免文字偏移）
 opt.signcolumn = "yes"
 
+local signs = {
+    [vim.diagnostic.severity.ERROR] = Core.configs.icons.diagnostics.Error,
+    [vim.diagnostic.severity.WARN]  = Core.configs.icons.diagnostics.Warn,
+    [vim.diagnostic.severity.INFO]  = Core.configs.icons.diagnostics.Info,
+    [vim.diagnostic.severity.HINT]  = Core.configs.icons.diagnostics.Hint,
+}
 
+vim.diagnostic.config({
+    signs = {
+        text = signs,
+    },
+})
 

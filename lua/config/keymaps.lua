@@ -89,10 +89,6 @@ key("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 key("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 key("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
--- yazi.nvim
-key( "n", "<leader>y", ":Yazi<CR>",     { desc = "Open Yazi (root dir)" } )
-key( "n", "<leader>Y", ":Yazi cwd<CR>", { desc = "Open Yazi (cwd)" } )
-
 -- =====================================================================
 
 

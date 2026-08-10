@@ -22,7 +22,7 @@ return {
               symbols = {
                 added = Core.configs.icons.git.Added,
                 modified = Core.configs.icons.git.Modified,
-                remved = Core.configs.icons.git.Deleted,
+                removed = Core.configs.icons.git.Deleted,
               }
             },
           },

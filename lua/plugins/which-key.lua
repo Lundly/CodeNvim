@@ -21,7 +21,6 @@ return {
         { "<leader>s",     group = "search" },
         { "<leader>u",     group = "ui" },
         { "<leader>x",     group = "diagnostics/quickfix" },
-        { "<leader>;",     group = "dropbar" },
         { "[",             group = "prev" },
         { "]",             group = "next" },
         { "g",             group = "goto" },
@@ -50,11 +49,11 @@ return {
       group = " +",
       -- icon group define
       rules = {
-        { plugin = "yazi.nvim", icon = "󰇥 ", color = "Yellow" },
-        { plugin = "multicursor.nvim", icon = "󰗧", color = "White" },
-        { pattern = "lazy", icon = "󰒲 ", color = "purple" },
-        { pattern = "dropbar", icon = " ", color = "Blue" },
-        { pattern = "multicursor", icon = "󰗧 ", color = "White" },
+        { plugin  = "yazi.nvim",        icon = "󰇥 ", color = "Yellow" },
+        { plugin  = "multicursor.nvim", icon = "󰗧",  color = "White" },
+        { plugin  = "dropbar.nvim",     icon = " ", color = "Blue" },
+        { pattern = "lazy",             icon = "󰒲 ", color = "purple" },
+        { pattern = "multicursor",      icon = "󰗧 ", color = "White" },
       }
     }
   },

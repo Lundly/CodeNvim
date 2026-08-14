@@ -6,10 +6,6 @@ local key = vim.keymap.set
 key( { "n", "v", "o" }, "gl", "$", { desc = "Goto end of line" } )
 key( { "n", "v", "o" }, "gh", "^", { desc = "Goto head of line" } )
 
--- scroll speed
-key( "n", "<C-u>", "10k" )
-key( "n", "<C-d>", "10j" )
-
 -- better cursor movement
 key({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'",      { desc = "Down", expr = true, silent = true })
 key({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })

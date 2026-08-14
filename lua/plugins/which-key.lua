@@ -16,7 +16,7 @@ return {
         { "<leader>g",     group = "git" },
         { "<leader>gh",    group = "hunks" },
         { "<leader>l",     group = "lazy" },
-        { "<leader>m",     group = "multicursor" },
+        { "<leader>m",     group = "multicursor/minimap" },
         { "<leader>q",     group = "quit/session" },
         { "<leader>s",     group = "search" },
         { "<leader>u",     group = "ui" },
@@ -49,11 +49,11 @@ return {
       group = " +",
       -- icon group define
       rules = {
-        { plugin  = "yazi.nvim",        icon = "󰇥 ", color = "Yellow" },
-        { plugin  = "multicursor.nvim", icon = "󰗧",  color = "White" },
-        { plugin  = "dropbar.nvim",     icon = " ", color = "Blue" },
-        { pattern = "lazy",             icon = "󰒲 ", color = "purple" },
-        { pattern = "multicursor",      icon = "󰗧 ", color = "White" },
+        { plugin  = "yazi.nvim",            icon = "󰇥 ", color = "Yellow" },
+        { plugin  = "multicursor.nvim",     icon = "󰗧",  color = "White" },
+        { plugin  = "dropbar.nvim",         icon = " ", color = "Blue" },
+        { pattern = "lazy",                 icon = "󰒲 ", color = "purple" },
+        { pattern = "multicursor/minimap",  icon = " ", color = "Yellow" },
       }
     }
   },

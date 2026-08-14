@@ -2,15 +2,26 @@ return {
   {
     "Isrothy/neominimap.nvim",
     event = { "BufReadPre", "BufNewFile" },
+    keys = {
+      { "<leader>mt", "<cmd>Neominimap Toggle<cr>", desc = "Toggle global minimap" },
+      { "<leader>mf", "<cmd>Neominimap ToggleFocus<cr>", desc = "Switch focus on minimap" },
+      { "<leader>mw", "<cmd>Neominimap WinToggle<cr>", desc = "Toggle minimap for current window" },
+    },
     init = function ()
+      local mw = 20
       vim.g.neominimap = {
         auto_enable = true,
         -- minimap style
-        layout = "split",
+        layout = "float",
         split = {
-          minimap_width = 20,
+          minimap_width = mw,
           fix_width = false,
           close_if_last_window = true,
+          direction = "right",
+        },
+        float = {
+          minimap_width = mw,
+          max_minimap_height = nil,
         },
         -- cursor action
         click = {

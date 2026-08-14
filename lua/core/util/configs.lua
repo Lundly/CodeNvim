@@ -85,4 +85,8 @@ configs.extra = {
   overwrite = true
 }
 
+configs.lsp = {
+  inlay_hints = { enabled = true }
+}
+
 return configs

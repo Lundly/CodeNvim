@@ -15,6 +15,20 @@ vim.api.nvim_create_user_command("SetIndent", function(opts)
   print(string.format("set shift width -> %s; tab width -> %s", size, size))
 end, { nargs = "?" })
 
+-- delete all marks
 vim.cmd(":command! Dm :delmarks! ")
+-- dashboard
 vim.cmd(":command! Dashboard :lua Snacks.dashboard()")
 
+-- toggle inlay hints
+vim.api.nvim_create_user_command("ToggleInlayHints", function (opts)
+  local global = opts.bang and true or false
+  if global then
+    local inlay_hints = Core.configs.lsp.inlay_hints.enabled
+    vim.lsp.inlay_hint.enable(not inlay_hints)
+    Core.configs.lsp.inlay_hints.enabled = not inlay_hints
+  else
+    local inlay_hints_bufnr = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
+    vim.lsp.inlay_hint.enable(not inlay_hints_bufnr, { bufnr = 0 })
+  end
+end, { desc = "Toggle inlay hints", bang = true })

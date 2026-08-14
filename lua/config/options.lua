@@ -17,9 +17,9 @@ opt.relativenumber = true
 
 -- set true to display invisible char
 opt.list = true
-vim.opt.listchars = {
+opt.listchars = {
     lead  = " ",
-    trail = "󰧟",
+    trail = "-",
     tab   = "▸ ",
     nbsp  = "␣",
 }
@@ -77,14 +77,16 @@ opt.undolevels = 5000
 
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 
--- fold
+-- icons
 opt.fillchars = {
-  foldopen = "",
+  foldopen  = "",
   foldclose = "",
-  fold = " ",
-  foldsep = " ",
-  diff = "╱",
-  eob = " ",
+  fold      = " ",
+  foldsep   = " ",
+  diff      = "╱",
+  eob       = " ",
+  -- horiz     = " ",
+  -- vert      = " ",
 }
 opt.foldenable = true
 opt.foldlevel = 99

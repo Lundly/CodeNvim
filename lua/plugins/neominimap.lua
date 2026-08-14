@@ -6,7 +6,12 @@ return {
       vim.g.neominimap = {
         auto_enable = true,
         -- minimap style
-        layout = "float",-- include "float" | "split", "split" have to quit twice when execute ":q"
+        layout = "split",
+        split = {
+          minimap_width = 20,
+          fix_width = false,
+          close_if_last_window = true,
+        },
         -- cursor action
         click = {
           enabled = true
@@ -25,10 +30,10 @@ return {
             HINT  = 70, ---@type integer
           },
           icon = {
-              ERROR = "▎", ---@type string
-              WARN  = "▎", ---@type string
-              INFO  = "▎", ---@type string
-              HINT  = "▎", ---@type string
+            ERROR = "▎", ---@type string
+            WARN  = "▎", ---@type string
+            INFO  = "▎", ---@type string
+            HINT  = "▎", ---@type string
           },
         },
         curren_line_pistion = "center",

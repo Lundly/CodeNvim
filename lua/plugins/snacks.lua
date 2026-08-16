@@ -67,6 +67,14 @@ return {
         },
       },
 
+      statuscolumn = {
+        left = { "mark", "sign" }, -- priority of signs on the left (high to low)
+        right = { "fold", "git" }, -- priority of signs on the right (high to low)
+        folds = {
+          open = true, -- show open fold icons
+          git_hl = true, -- use Git Signs hl for fold icons
+        },
+      }
 
     },
 
@@ -152,6 +160,37 @@ return {
       { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
     },
 
+    config = function (_, opts)
+      local sn = require("snacks")
+      local sn_dashboard = require("snacks.dashboard")
+
+      -- custom Nvim version
+      sn_dashboard.sections.nvim_ver = function ()
+        local ver = "NVIM " .. vim.version().build
+        return { text = { ver, hl = "Character" }, align = "center" }
+      end
+
+      -- custom startup
+      sn_dashboard.sections.custom_startup = function()
+        local lazy_stats = require("lazy").stats()
+        local time = string.format("%.2f", lazy_stats.startuptime):gsub("%.?0+$", "")
+        return {
+          align = "center",
+          text = {
+            { " ", hl = "Grey" },
+            { lazy_stats.loaded .. "/" .. lazy_stats.count, hl = "Grey" },
+            { " plugins loaded. Started in ", hl = "Grey" },
+            { time .. "ms", hl = "Grey" },
+          },
+        }
+      end
+      sn.setup(opts)
+
+      if Core.configs.extra.overwrite and Core.overwrite.config.snacks_statuscolumn then
+        Core.overwrite.fn.snacks_statuscolumn.overwrite()
+      end
+
+    end
 
   }
 }

@@ -46,35 +46,35 @@ return {
         }
       }
     },
-    config = function (_, opts)
-      opts = opts or {}
-      local sn = require("snacks")
-
-      -- cusom section
-      local sn_dashboard = require("snacks").dashboard
-
-      -- custom Nvim version
-      sn_dashboard.sections.nvim_ver = function ()
-        local ver = "NVIM " .. vim.version().build
-        return { text = { ver, hl = "Character" }, align = "center" }
-      end
-
-      -- custom startup
-      sn_dashboard.sections.custom_startup = function()
-        local lazy_stats = require("lazy").stats()
-        local time = string.format("%.2f", lazy_stats.startuptime):gsub("%.?0+$", "")
-        return {
-          align = "center",
-          text = {
-            { " ", hl = "Grey" },
-            { lazy_stats.loaded .. "/" .. lazy_stats.count, hl = "Grey" },
-            { " plugins loaded. Started in ", hl = "Grey" },
-            { time .. "ms", hl = "Grey" },
-          },
-        }
-      end
-
-      sn.setup(opts)
-    end
+    -- config = function (_, opts)
+    --   opts = opts or {}
+    --   local sn = require("snacks")
+    --
+    --   -- cusom section
+    --   local sn_dashboard = require("snacks").dashboard
+    --
+    --   -- custom Nvim version
+    --   sn_dashboard.sections.nvim_ver = function ()
+    --     local ver = "NVIM " .. vim.version().build
+    --     return { text = { ver, hl = "Character" }, align = "center" }
+    --   end
+    --
+    --   -- custom startup
+    --   sn_dashboard.sections.custom_startup = function()
+    --     local lazy_stats = require("lazy").stats()
+    --     local time = string.format("%.2f", lazy_stats.startuptime):gsub("%.?0+$", "")
+    --     return {
+    --       align = "center",
+    --       text = {
+    --         { " ", hl = "Grey" },
+    --         { lazy_stats.loaded .. "/" .. lazy_stats.count, hl = "Grey" },
+    --         { " plugins loaded. Started in ", hl = "Grey" },
+    --         { time .. "ms", hl = "Grey" },
+    --       },
+    --     }
+    --   end
+    --
+    --   sn.setup(opts)
+    -- end
   },
 }

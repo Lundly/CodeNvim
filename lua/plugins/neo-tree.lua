@@ -10,10 +10,17 @@ return {
     lazy = false, -- neo-tree will lazily load itself
     keys = {
       {
-        "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Buffers (root dir)",
+        "<leader>e", "<cmd>Neotree toggle last<cr>", desc = "Buffers (root dir)",
       },
     },
     opts = {
+      window = {
+        mappings = {
+          ["l"] = "toggle_node",
+          ["h"] = "close_node",
+          ["L"] = "focus_preview"
+        }
+      },
       source_selector = {
         winbar = true,
         statusline = false,
@@ -36,32 +43,38 @@ return {
         show_separator_on_edge = true,
       },
       filesystem = {
+        bind_to_cwd = false,
         filtered_items = {
           visible = true
         },
       },
       default_component_configs = {
+        indent = {
+          with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
+          expander_collapsed = "",
+          expander_expanded = "",
+          expander_highlight = "NeoTreeExpander",
+        },
         git_status = {
           symbols = {
             -- change type
-            added     = "",
-            deleted   = " ",
-            modified  = " ",
-            renamed   = "󰁕 ",
+            added     = Core.configs.icons.git.Added,
+            deleted   = Core.configs.icons.git.Deleted,
+            modified  = Core.configs.icons.git.Modified,
             -- Status type
-            untracked = " ",
-            ignored   = " ",
-            unstaged  = "U",
-            staged    = "󱓳 ",
-            conflict  = " ",
+            untracked = Core.configs.icons.git.Untracked,
+            ignored   = Core.configs.icons.git.Ignored,
+            unstaged  = Core.configs.icons.git.Unstaged,
+            staged    = Core.configs.icons.git.Staged,
+            conflict  = Core.configs.icons.git.Conflict,
           }
         },
         diagnostics = {
           symbols = {
-            error = " ",
-            warn  = " ",
-            hint  = "󰌵 ",
-            info  = " ",
+            error = Core.configs.icons.diagnostics.Error,
+            warn  = Core.configs.icons.diagnostics.Warn,
+            hint  = Core.configs.icons.diagnostics.Hint,
+            info  = Core.configs.icons.diagnostics.Info,
           },
           highlights = {
             error = "DiagnosticSignError",

@@ -2,7 +2,7 @@
 local opt = vim.opt
 
 -- color scheme
-vim.cmd.colorscheme "everforest"
+Core.configs.colorscheme = "everforest"
 
 -- mapleader
 vim.g.mapleader = " "
@@ -17,6 +17,12 @@ opt.relativenumber = true
 
 -- set true to display invisible char
 opt.list = true
+opt.listchars = {
+    lead  = " ",
+    trail = "-",
+    tab   = "▸ ",
+    nbsp  = "␣",
+}
 
 -- 0: do not show status line;
 -- 1: show status line when mutiple windows exist;
@@ -71,14 +77,16 @@ opt.undolevels = 5000
 
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 
--- fold
+-- icons
 opt.fillchars = {
-  foldopen = "",
+  foldopen  = "",
   foldclose = "",
-  fold = " ",
-  foldsep = " ",
-  diff = "╱",
-  eob = " ",
+  fold      = " ",
+  foldsep   = " ",
+  diff      = "╱",
+  eob       = " ",
+  -- horiz     = " ",
+  -- vert      = " ",
 }
 opt.foldenable = true
 opt.foldlevel = 99
@@ -98,10 +106,21 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- terminal true color
-opt.termguicolors =true
+opt.termguicolors = true
 
 -- 始终显示符号列（避免文字偏移）
 opt.signcolumn = "yes"
 
+local signs = {
+    [vim.diagnostic.severity.ERROR] = Core.configs.icons.diagnostics.Error,
+    [vim.diagnostic.severity.WARN]  = Core.configs.icons.diagnostics.Warn,
+    [vim.diagnostic.severity.INFO]  = Core.configs.icons.diagnostics.Info,
+    [vim.diagnostic.severity.HINT]  = Core.configs.icons.diagnostics.Hint,
+}
 
+vim.diagnostic.config({
+    signs = {
+        text = signs,
+    },
+})
 

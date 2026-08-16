@@ -6,10 +6,6 @@ local key = vim.keymap.set
 key( { "n", "v", "o" }, "gl", "$", { desc = "Goto end of line" } )
 key( { "n", "v", "o" }, "gh", "^", { desc = "Goto head of line" } )
 
--- scroll speed
-key( "n", "<C-u>", "10k" )
-key( "n", "<C-d>", "10j" )
-
 -- better cursor movement
 key({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'",      { desc = "Down", expr = true, silent = true })
 key({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { desc = "Down", expr = true, silent = true })
@@ -21,8 +17,8 @@ key("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==",                   {
 key("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==",             { desc = "Move Up" })
 key("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi",                                   { desc = "Move Down" })
 key("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi",                                   { desc = "Move Up" })
-key("v", "<A-j>", "<cmd><C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv",       { desc = "Move Down" })
-key("v", "<A-k>", "<cmd><C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
+key("v", "<A-j>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv",       { desc = "Move Down" })
+key("v", "<A-k>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
 
 -- better indent
 key("x", "<", "<gv")
@@ -88,10 +84,6 @@ key("n", "<leader><tab><tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 key("n", "<leader><tab>]", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 key("n", "<leader><tab>d", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 key("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
-
--- yazi.nvim
-key( "n", "<leader>y", ":Yazi<CR>",     { desc = "Open Yazi (root dir)" } )
-key( "n", "<leader>Y", ":Yazi cwd<CR>", { desc = "Open Yazi (cwd)" } )
 
 -- =====================================================================
 

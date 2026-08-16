@@ -52,7 +52,8 @@ nvim
 ├── lazy-lock.json
 ├── lua/
 │   ├── config/
-│   └── plugins/
+│   ├── plugins/
+│   └── core/
 └── README.md
 ```
 
@@ -67,5 +68,4 @@ nvim
 - [x] 安装多光标插件
 - [x] ccc.nvim
 - [x] 终端
-- [ ] 快捷键注册和提示配置
-- [ ] 整理所有插件的配置文件格式
+- [x] 快捷键注册和提示配置

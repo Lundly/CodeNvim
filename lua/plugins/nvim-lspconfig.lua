@@ -13,8 +13,6 @@ return {
     { "gK", function() return vim.lsp.buf.signature_help() end, desc = "Signature Help" },
     { "<c-k>", function() return vim.lsp.buf.signature_help() end, mode = "i", desc = "Signature Help" },
     { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "x" } },
-    { "<leader>cc", vim.lsp.codelens.run, desc = "Run Codelens", mode = { "n", "x" } },
-    { "<leader>cC", vim.lsp.codelens.refresh, desc = "Refresh & Display Codelens", mode = { "n" } },
     { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File", mode ={"n"} },
     { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
     { "]]", function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference" },

@@ -1,7 +1,7 @@
 return {
   {
     "lewis6991/gitsigns.nvim",
-    ft = "*",
+    event = "VeryLazy",
     opts = {
       signs = {
         add          = { text = "▎" },

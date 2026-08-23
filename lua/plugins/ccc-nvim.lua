@@ -1,7 +1,8 @@
 return {
   {
     "uga-rosa/ccc.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    -- event = { "BufReadPre", "BufNewFile" },
+    event = "VeryLazy",
     keys = {
       {"<leader>cp", ":CccPick<CR>", desc = "Creat color code pick" },
     },

@@ -32,3 +32,25 @@ vim.api.nvim_create_user_command("ToggleInlayHints", function (opts)
     vim.lsp.inlay_hint.enable(not inlay_hints_bufnr, { bufnr = 0 })
   end
 end, { desc = "Toggle inlay hints", bang = true })
+
+-- toggle color code hilight_mode
+vim.api.nvim_create_user_command(
+  "ToggleColorCodeHl",
+  function (opts)
+    local hl_mode = { "bg", "fg", "virtual", "background", "foreground" }
+    local args = opts.args
+    if not vim.tbl_contains(hl_mode, args) then
+      vim.notify("Unknown command: " .. args, "error")
+    else
+      require("ccc.config").options.highlight_mode = args
+      vim.cmd("do ColorScheme")
+      vim.notify("Color code highlight_mode: " .. args)
+    end
+  end,
+  {
+    nargs = 1,
+    complete = function ()
+      return { "bg", "fg", "virtual", "background", "foreground" }
+    end
+  }
+)

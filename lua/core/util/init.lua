@@ -25,6 +25,7 @@ M.neovim = neovim
 neovim.load_files = {}
 neovim.is_init = false
 
+-- [TODO] 加载配置模块
 function neovim.startup()
   local group = vim.api.nvim_create_augroup("CodeNvim", { clear = true })
   vim.api.nvim_create_autocmd("User", {

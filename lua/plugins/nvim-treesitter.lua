@@ -42,9 +42,18 @@ return {
         if not lang or not have(lang) then
           return
         end
-        -- highlight
+        -- highlight: attach on first interaction so the parser load
+        -- doesn't block startup and the first screen update
         if opts.highlight.enable ~= false then
-          pcall(vim.treesitter.start, ev.buf)
+          vim.api.nvim_create_autocmd({ "CursorMoved", "InsertEnter" }, {
+            buffer = ev.buf,
+            once = true,
+            callback = function()
+              if vim.api.nvim_buf_is_valid(ev.buf) then
+                pcall(vim.treesitter.start, ev.buf)
+              end
+            end,
+          })
         end
         -- indent
         if opts.indent.enable ~= false then

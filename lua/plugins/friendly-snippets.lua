@@ -1,11 +1,11 @@
 return {
   {
     "rafamadriz/friendly-snippets",
-    event = { "BufReadPre", "BufNewFile" },
+    event = "VeryLazy",
   },
   {
     "L3MON4D3/LuaSnip",
-    event = { "BufReadPre", "BufNewFile" },
+    event = "VeryLazy",
     dependencies = { "rafamadriz/friendly-snippets" },
     config = function()
       require("luasnip.loaders.from_vscode").lazy_load()

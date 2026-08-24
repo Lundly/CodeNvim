@@ -22,24 +22,25 @@ return {
       },
 
       completion = {
-        -- (Default) Only show the documentation popup when manually triggered
-        documentation = { auto_show = true },
         keyword = {
           range = "full",
         },
         accept = {
           auto_brackets = { enabled = false },
         },
-        -- list = {
-        --   selection = {
-        --     -- select one by default
-        --     preselect = true,
-        --     -- auto insert when select
-        --     auto_insert = true,
-        --   }
-        -- },
-        menu = {
+        documentation = {
+          window = {
+            border = "rounded",
+            winhighlight = "Normal:BlinkCmpKindText,FloatBorder:Grey,EndOfBuffer:BlinkCmpMenuSelection,BlinkCmpDocSeparator:Grey",
+          scrollbar = false,
+          },
           auto_show = true,
+        },
+        menu = {
+          border = "single",
+          auto_show = true,
+          winhighlight = "Normal:BlinkCmpKindText,FloatBorder:Grey,CursorLine:BlinkCmpMenuSelection,Search:None",
+          scrollbar = false,
           -- menu style
           draw = {
             columns = {
